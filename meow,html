@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>動物梗圖隨機機</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      padding: 20px;
+      background: #f7f7f7;
+    }
+    #meme {
+      max-width: 320px;
+      margin-top: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      background: #4caf50;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+<h1>🐾 動物梗圖隨機機 🐾</h1>
+<p>按下按鈕就會出現一張新的動物梗圖！</p>
+
+<button onclick="showMeme()">換一張梗圖！</button>
+
+<img id="meme" src="" alt="梗圖會出現在這裡">
+
+<script>
+  // 放一些動物梗圖的連結
+  const memes = [
+    "https://i.imgur.com/HSuE4A9.jpeg",
+    "https://i.imgur.com/0rN7xZC.jpeg",
+    "https://i.imgur.com/0n2yQ2w.jpeg",
+    "https://i.imgur.com/z7hZQfS.jpeg",
+    "https://i.imgur.com/0bZLwNv.jpeg",
+    "https://i.imgur.com/KlW7Yvt.jpeg"
+  ];
+
+  function showMeme() {
+    const img = document.getElementById("meme");
+    const random = Math.floor(Math.random() * memes.length);
+    img.src = memes[random];
+  }
+</script>
+
+</body>
+</html>
