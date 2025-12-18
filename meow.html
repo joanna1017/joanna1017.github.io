@@ -19,7 +19,7 @@
     }
    .fixed-button {
       position: fixed;
-      top: 75%;          /* 螢幕高度的 75%（中間偏下） */
+      top: 75%;        
       left: 50%;
       transform: translate(-50%, -50%);
       z-index: 999;
@@ -74,7 +74,6 @@
 
   let pool = [];
 
-  // 洗牌（打亂陣列）
   function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -84,12 +83,12 @@
 
   function showMeme() {
     if (pool.length === 0) {
-      pool = [...memes]; // 複製一份
-      shuffle(pool);     // 洗牌
+      pool = [...memes]; 
+      shuffle(pool);    
     }
 
     const img = document.getElementById("meme");
-    img.src = pool.pop(); // 拿一張不重複的
+    img.src = pool.pop(); 
   }
 </script>
 
