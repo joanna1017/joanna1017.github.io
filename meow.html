@@ -17,11 +17,12 @@
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-    .fixed-button {
+   .fixed-button {
       position: fixed;
-      bottom: 20px;
+      top: 75%;          /* 螢幕高度的 75%（中間偏下） */
       left: 50%;
-      transform: translateX(-50%);
+      transform: translate(-50%, -50%);
+      z-index: 999;
     }
 
     button {
@@ -33,7 +34,6 @@
       color: white;
       cursor: pointer;
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
     button:hover {
       background: #45a049;
     }
