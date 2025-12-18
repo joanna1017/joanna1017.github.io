@@ -72,10 +72,24 @@
     
   ];
 
+  let pool = [];
+
+  // 洗牌（打亂陣列）
+  function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  }
+
   function showMeme() {
+    if (pool.length === 0) {
+      pool = [...memes]; // 複製一份
+      shuffle(pool);     // 洗牌
+    }
+
     const img = document.getElementById("meme");
-    const random = Math.floor(Math.random() * memes.length);
-    img.src = memes[random];
+    img.src = pool.pop(); // 拿一張不重複的
   }
 </script>
 
